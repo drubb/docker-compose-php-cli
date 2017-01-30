@@ -7,6 +7,9 @@ RUN apk add --no-cache autoconf build-base git imagemagick imagemagick-dev libto
     pecl install package.xml imagick ssh2-0.13 xdebug && \
     docker-php-ext-enable imagick ssh2 uploadprogress xdebug && \
     apk del autoconf build-base git *-dev && \
-    rm -rf /tmp/pear uploadprogress
+    cd / && \
+    rm -rf /tmp/pear uploadprogress && \
+    deluser --remove-home www-data && \
+    rm -rf /home
 
 CMD ["php", "-v"]
