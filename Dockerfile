@@ -1,4 +1,4 @@
-FROM php:7.1-alpine
+FROM php:7.0-alpine
 
 RUN apk add --no-cache autoconf build-base git icu-dev imagemagick imagemagick-dev libtool libmcrypt libmcrypt-dev libpng libpng-dev libssh2-dev zlib-dev libxml2-dev && \
     docker-php-ext-install bcmath gd intl mcrypt zip opcache pcntl pdo_mysql mysqli soap && \
